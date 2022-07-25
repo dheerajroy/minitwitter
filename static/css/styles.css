@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+* {
+    outline: none;
+}
+
+nav {
+    background: blue;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav a {
+    color: greenyellow;
+    font-weight: 900;
+    margin: 5px;
+}
+
+.content {
+    margin-top: 130px;
+    padding: 10px;
+}
+
+.tweets {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tweet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    padding: 10px;
+}
+
+.tweet img {
+    max-width: 300px;
+    max-height: 250px;
+}

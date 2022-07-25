@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>{{ request.user }}</h1>
+    <h2>Tweets:</h2>
+    <div class="tweets">
+        {% for tweet in tweets %}
+        <div class="tweet">
+            <h5>{{ tweet.user }}</h5>
+            {% if tweet.image %}
+                <img src="{{ tweet.image.url }}" alt="">
+            {% endif %}
+            <h3>{{ tweet.description }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

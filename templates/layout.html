@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Mini Twitter</title>
+</head>
+<body>
+    <nav>
+        <center>
+            <h2>Mini Twitter</h2>
+            <h3>Hey, {% if request.user %}{{ request.user }}{% endif %}</h3>
+            <div>
+                <a href="{% url 'index' %}">Home</a>
+                {% if not request.user.is_authenticated %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Signup</a>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'createtweet' %}">Create Tweet</a>
+                <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'logout' %}">Logout</a>
+                {% endif %}
+            </div>
+        </center>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
